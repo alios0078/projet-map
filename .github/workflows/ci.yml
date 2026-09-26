@@ -42,10 +42,10 @@ deploy:
           username: ${{ secrets.VM_USER }}
           key: ${{ secrets.ORACLE_SSH_KEY }}
           script: |
-            cd projet-map
+            cd map-projet
             git pull origin main
             cd app
-            docker build -t devops-map .
+            docker build -t map-projet-app .
             docker stop devops-app || true
             docker rm devops-app || true
-            docker run -d -p 5000:5000 --name devops-map map-projet-app
+            docker run -d -p 5000:5000 --name map-projet map-projet-app
