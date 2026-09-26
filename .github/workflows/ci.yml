@@ -18,12 +18,12 @@ jobs:
         run: docker build -t map-projet-app ./app
 
       - name: Lancer le conteneur
-        run: docker run -d -p 5000:5000 --name map-app map-projet-app
+        run: docker run -d --name test-app -p 5000:5000 map-projet-app
 
       - name: Attendre que le conteneur démarre
         run: sleep 3
 
-      - name: Tester le endpoint /health
+      - name: Tester le endpoint /
         run: curl --fail http://localhost:5000/
 
       - name: Arrêter le conteneur
