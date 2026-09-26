@@ -46,6 +46,6 @@ deploy:
             git pull origin main
             cd app
             docker build -t map-projet-app .
-            docker stop devops-app || true
-            docker rm devops-app || true
-            docker run -d -p 5000:5000 --name map-projet map-projet-app
+            docker stop map-projet-app || true
+            docker rm map-projet-app || true
+            docker run -d -p 5000:5000 --name map-projet-app map-projet-app
