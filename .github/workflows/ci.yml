@@ -29,7 +29,7 @@ jobs:
       - name: Arrêter le conteneur
         run: docker stop test-app
 
-deploy:
+  deploy:
     needs: build-and-test
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
